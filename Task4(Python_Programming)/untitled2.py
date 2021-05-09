@@ -102,7 +102,7 @@ for i in range(N-2, -1, -2):
 #Q10
 dec = int(input("Enter the value of n:"))
 for i in range(dec):
-  print('{0,D}'.format(int(i)))
-  print('{0,X}'.format(int(i)))
-  print('{0,O}'.format(int(i)))
-  print('{0,B}'.format(int(i)))
+  print("{0:d}".format(int(i)))
+  print('{0:x}'.format(int(i)))
+  print('{0:o}'.format(int(i)))
+  print('{0:b}'.format(int(i)))
