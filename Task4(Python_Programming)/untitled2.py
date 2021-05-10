@@ -106,3 +106,75 @@ for i in range(dec):
   print('{0:x}'.format(int(i)))
   print('{0:o}'.format(int(i)))
   print('{0:b}'.format(int(i)))
+
+#Task4
+#Q11
+def print_rangoli(n):
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    py = [alpha[i] for i in range(n)]
+    items = list(range(n))
+    items = items[:-1]+items[::-1]
+    for i in items:
+        temp = py[-(i+1):]
+        row = temp[::-1]+temp[1:]
+        print("-".join(row).center(n*4-3, "-"))
+
+
+n = int(input("Enter the size:"))
+print_rangoli(n)
+
+#Task4
+#Q12
+name = str(input("Enter the full name:"))
+nl = name.split()
+for i in nl:
+  lst = []
+  c = i.capitalize()
+  lst.append(c)
+  h = ""
+  print(h.join(map(str, lst)))
+
+#Task4
+#Q13
+vowels = ['A', 'E', 'I', 'O', 'U']
+
+def minion_game(string):
+    Kevin = 0
+    Stuart = 0
+    word = list(string)
+    x = len(word)
+    vowels = ['A','E','I','O','U']
+    for inx, w in enumerate(word):
+        if w in vowels:
+            Kevin = Kevin + x
+        else:
+            Stuart = Stuart + x
+        x = x - 1
+    if Stuart > Kevin:
+        print ('Stuart', Stuart)
+    elif Kevin > Stuart:
+        print ('Kevin', Kevin)
+    else:
+        print ('Draw')
+string = str(input("Enter the string:"))
+minion_game(string)
+
+#Task
+#Q14
+def merge_the_tools(string, k):
+    # your code goes here
+
+    temp = []
+    len_temp = 0
+    for item in string:
+        len_temp += 1
+        if item not in temp:
+            temp.append(item)
+        if len_temp == k:
+            print (''.join(temp))
+            temp = []
+            len_temp = 0
+
+string, k = input(), int(input())
+merge_the_tools(string, k)
+
